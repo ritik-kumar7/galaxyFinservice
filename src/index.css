@@ -36,18 +36,20 @@ ul {
   list-style: none;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Scrollbar - Desktop Only */
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-dark);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+  }
 }
 
 /* Utilities */
