@@ -1,0 +1,16 @@
+/* App-wide styles if needed */
+@import './components/animations/animations.css';
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize rendering for animations */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}

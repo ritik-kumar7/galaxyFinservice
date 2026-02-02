@@ -1,0 +1,56 @@
+.breadcrumbs {
+    padding: 140px 0 60px 0;
+    min-height: 20vh;
+    /* Reduced height as per modern sleek look */
+    position: relative;
+    background: transparent;
+    /* Transparent */
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+/* Removed ::before overlay to keep it transparent as requested */
+
+.breadcrumbs .container {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumbsBanner h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #00bac7;
+    /* Primary Color */
+    font-family: var(--font-heading);
+}
+
+.breadcrumbsBanner ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.breadcrumbsBanner ol li+li {
+    padding-left: 10px;
+}
+
+.breadcrumbsBanner ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #fff;
+    content: "/";
+}
+
+.breadcrumbsBanner ol li a {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.breadcrumbsBanner ol li a:hover {
+    color: var(--primary);
+}

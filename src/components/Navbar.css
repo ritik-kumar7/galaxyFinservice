@@ -1,0 +1,369 @@
+#header {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    height: 80px;
+    transition: all 0.5s;
+    z-index: 9999;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+}
+
+#header .logo img {
+    max-height: 50px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+/* Desktop Navigation */
+.navbar {
+    padding: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar>ul>li {
+    white-space: nowrap;
+    padding: 10px 0 10px 24px;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+    gap: 4px;
+    padding-bottom: 5px;
+}
+
+/* Active Link Style */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active,
+.navbar li:hover>a {
+    color: var(--primary);
+}
+
+/* Don't show underline for dropdown items if they are not the active one */
+.navbar .dropdown ul a::after {
+    display: none;
+}
+
+.navbar .dropdown ul a.active,
+.navbar .dropdown ul a:hover {
+    color: var(--primary);
+    background-color: rgba(0, 186, 199, 0.1);
+}
+
+.navbar .btn-nav {
+    background: var(--primary);
+    color: #000 !important;
+    padding: 8px 20px !important;
+    border-radius: 4px;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.navbar .btn-nav:hover {
+    background: #fff;
+    color: var(--primary) !important;
+}
+
+.navbar .btn-nav::after {
+    display: none;
+}
+
+/* Dropdown */
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+.navbar .dropdown ul li {
+    min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul li:hover>a {
+    color: var(--primary);
+    background-color: #f6f9ff;
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+    z-index: 9999;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(28, 175, 188);
+        padding: 0;
+        color: #000;
+        border: 1px solid rgba(202, 154, 8, 0.36);
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
+
+/* Galaxy Official Mobile Navigation Overlay */
+.navbar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(8, 12, 18, 0.98);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 99999;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-headerContainer .logo img {
+    height: 40px;
+}
+
+.mobile-nav-close {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav-close:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.mobile-nav-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.navbar-mobile ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 18px 25px;
+    font-size: 17px;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile a.active {
+    color: var(--primary);
+    background: rgba(37, 183, 195, 0.05);
+}
+
+.navbar-mobile .chevron-icon {
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-mobile .chevron-icon.rotate {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+
+.navbar-mobile .dropdown ul {
+    background: rgba(0, 0, 0, 0.2);
+    display: none;
+    padding: 5px 0;
+}
+
+.navbar-mobile .dropdown ul.dropdown-active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-mobile .dropdown ul a {
+    padding: 12px 25px 12px 45px;
+    font-size: 15px;
+    color: #b0b0b0;
+}
+
+.navbar-mobile .dropdown ul a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.mobile-auth-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-auth-links a {
+    color: var(--primary);
+    font-weight: 600;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.mobile-auth-links li:nth-child(2) a {
+    color: #fff;
+}
+
+.mobile-auth-links li:last-child a {
+    color: #f39c12;
+    /* Gold for Login */
+}
+
+.mobile-contact-info {
+    margin-top: 20px;
+    padding: 0 25px;
+    margin-bottom: 40px;
+}
+
+.mobile-contact-info li {
+    margin-bottom: 12px;
+}
+
+.mobile-contact-info a {
+    padding: 0;
+    font-size: 14px;
+    color: #888;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.mobile-contact-info a:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+body.mobile-nav-active {
+    overflow: hidden;
+}

@@ -1,0 +1,130 @@
+.start-trading-section {
+    padding: 80px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    /* Made transparent as requested */
+    z-index: 1;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid rgba(248, 195, 91, 0.3);
+    /* Golden border */
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark semi-transparent bg */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glow effect top accent */
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(248, 195, 91, 1), transparent);
+    box-shadow: 0 0 10px rgba(248, 195, 91, 0.8);
+}
+
+/* Glow effect bottom accent */
+.step-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 186, 199, 1), transparent);
+    box-shadow: 0 0 10px rgba(0, 186, 199, 0.8);
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(248, 195, 91, 0.6);
+    box-shadow: 0 5px 20px rgba(248, 195, 91, 0.2), inset 0 0 20px rgba(248, 195, 91, 0.1);
+}
+
+.step-number {
+    font-size: 60px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.step-icon {
+    background: var(--primary);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #000;
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.step-card h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.step-card p {
+    color: var(--text-dim);
+    font-size: 15px;
+}
+
+/* Connector Line (Desktop) */
+.step-connector {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .start-trading-section {
+        padding: 50px 0;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step-connector {
+        width: 2px;
+        height: 50px;
+        background: linear-gradient(180deg, transparent, var(--primary), transparent);
+    }
+}

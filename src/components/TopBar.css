@@ -1,0 +1,51 @@
+#topbar {
+    background: #02060a;
+    /* Darker, from reference */
+    height: 35px;
+    font-size: 11px;
+    transition: all 0.5s;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+}
+
+.top-nav-links a {
+    color: #fff;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.top-nav-links a:hover,
+.top-nav-links a.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991px) {
+    #topbar {
+        display: none;
+        /* Hidden on mobile/tablet to consistent with navbar breakpoint */
+    }
+}
