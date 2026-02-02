@@ -36,20 +36,24 @@ ul {
   list-style: none;
 }
 
-/* Scrollbar - Desktop Only */
-@media (min-width: 992px) {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Scrollbar - Global Subtle Design */
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 4px;
-  }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  /* Subtle by default */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  /* Brand color on hover only */
 }
 
 /* Utilities */
