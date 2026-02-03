@@ -442,6 +442,71 @@
     font-weight: 600;
 }
 
+/* Fix overflow-x hidden for tables on mobile and tablet views */
+@media (max-width: 991px) {
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
+    /* Fix table display on mobile */
+    .c_table {
+        width: 100%;
+        min-width: 600px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Fix content-box overflow on mobile and tablet */
+    .content-box {
+        overflow: visible !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Fix TradingView widget container on mobile */
+    .tradingview-widget-container {
+        overflow: visible !important;
+    }
+
+    .tradingview-widget-container__widget {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    /* Fix fact-box layout on mobile and tablet */
+    .fact-box {
+        overflow: visible !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        min-height: auto;
+    }
+
+    /* Ensure text doesn't overflow in content-box */
+    .content-box p,
+    .content-box h3 {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Fix flex layout on mobile */
+    .d-flex.flex-column.flex-md-row {
+        flex-direction: column !important;
+    }
+
+    .fact-box.col-md-6 {
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    /* Fix overflow-hidden class on mobile */
+    .overflow-hidden {
+        overflow: visible !important;
+    }
+}
+
 /* Calculator & Form pages – inputs, selects, buttons */
 .calculator-wrapper,
 .php-email-form {
